@@ -15,7 +15,20 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^2.7.0",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
     "prettier": "1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "prettier": {
     "singleQuote": true
